@@ -8,13 +8,18 @@ const bubbleSort = (array, position, arraySteps, colorSteps) => {
       if (array[j] > array[j + 1]) {
         array = swap(array, j, j + 1);
       }
+      //that is going to be our one step added to the arraysteps
       arraySteps.push(array.slice());
+      //swapped elements are coloured with red color
       colorKey[j] = 1;
       colorKey[j + 1] = 1;
+      //that manipulation gets added to the colorsteps
       colorSteps.push(colorKey.slice());
+
       colorKey[j] = 0;
       colorKey[j + 1] = 0;
     }
+    //last element will get added to sorted array
     colorKey[array.length - 1 - i] = 2;
     arraySteps.push(array.slice());
     colorSteps.push(colorKey.slice());
